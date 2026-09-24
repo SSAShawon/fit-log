@@ -1,11 +1,13 @@
 import Hero from '@/components/Hero';
+import WorkoutLibrary from '@/components/WorkoutLibrary';
 import React from 'react';
 
 const Page = () => {
   return (
     <div>
-      <h1>My App</h1>
       <Hero/>
+      
+      <WorkoutLibrary/>
     </div>
   );
 };

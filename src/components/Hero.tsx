@@ -3,14 +3,15 @@ import Image from "next/image";
 import logo from "../image/banner.png";
 const Hero = () => {
   return (
-    <div className="bg-black px-10 py-10 text-white">
+    <div className="bg-black px-10 py-20 text-white">
+       
       <div className="mx-auto max-w-10xl rounded-2xl bg-zinc-900 px-10 py-10">
         <div className="flex flex-row items-center justify-between gap-10">
           <div>
             <h1 className="text-sm py-5 text-[#c2f800]">
               WORKOUT LIBRARY
             </h1>
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-8xl font-bold">
               TRAIN WITH INTENT. LOG EVERY SET.
             </h1>
             <p className="py-6 text-gray-400">
