@@ -1,11 +1,12 @@
 import React from "react";
 import { Workout } from "@/types/workout";
 import Image from "next/image";
+import Link from "next/link";
 
 const WorkoutCard = ({ workout }: { workout: Workout }) => {
   return (
-    <div>
-      <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+    <Link href={`workout/${workout.id}`}>
+      <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg">
         {/* Image */}
         <div className=" relative h-90 w-full bg-zinc-800">
             <Image
@@ -29,21 +30,18 @@ const WorkoutCard = ({ workout }: { workout: Workout }) => {
 
           <div className="flex items-center text-sm text-gray-300 gap-8">
             <div className="flex items-center gap-2">
-              <span>◷</span>
-              <span>{workout.duration}</span>
+              <span>◷ {workout.duration} min</span>
             </div>
             <div className="flex items-center gap-2">
-              <span>🔥</span>
-              <span>{workout.caloriesBurned}</span>
+              <span>🔥 {workout.caloriesBurned} Kcal</span>
             </div>
             <div className="flex items-center gap-2">
-              <span>★</span>
-              <span>{workout.rating}</span>
+              <span>★ {workout.rating}</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
