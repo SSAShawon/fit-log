@@ -3,6 +3,7 @@ import { Workout } from '@/types/workout';
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { WorkoutContext } from '@/components/context/WorkoutContext';
+import { Plus } from "lucide-react";
 
 const WorkoutActions = ({workout}:{workout: Workout}) => {
     const { addWorkout, setAddWorkout } = useContext(WorkoutContext)!;
@@ -25,8 +26,8 @@ const WorkoutActions = ({workout}:{workout: Workout}) => {
         
               <button
               onClick={handleAddToPlan}
-              className="rounded-xl text-sm bg-[#c2f800] px-5 py-4 font-bold text-black">
-                + Add to today&apos;s plan
+              className="flex items-center gap-2 rounded-xl bg-[#c2f800] px-5 py-4 text-sm font-bold text-black">
+                <span><Plus size={16} /></span> Add to today&apos;s plan
             </button>
         
     );

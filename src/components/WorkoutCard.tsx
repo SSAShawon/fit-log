@@ -2,6 +2,7 @@ import React from "react";
 import { Workout } from "@/types/workout";
 import Image from "next/image";
 import Link from "next/link";
+import { Clock3, Flame, Star } from "lucide-react";
 
 const WorkoutCard = ({ workout }: { workout: Workout }) => {
   return (
@@ -30,13 +31,16 @@ const WorkoutCard = ({ workout }: { workout: Workout }) => {
 
           <div className="flex items-center text-sm text-gray-300 gap-8">
             <div className="flex items-center gap-2">
-              <span>◷ {workout.duration} min</span>
+              <Clock3 size={16} />
+              <span> {workout.duration} min</span>
             </div>
             <div className="flex items-center gap-2">
-              <span>🔥 {workout.caloriesBurned} Kcal</span>
+              <Flame size={16} />
+              <span> {workout.caloriesBurned} Kcal</span>
             </div>
             <div className="flex items-center gap-2">
-              <span>★ {workout.rating}</span>
+              <Star size={16} />
+              <span> {workout.rating}</span>
             </div>
           </div>
         </div>

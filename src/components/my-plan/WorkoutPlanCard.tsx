@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Workout } from "@/types/workout";
+import { Check } from "lucide-react";
 
 interface WorkoutPlanCardProps {
   item: Workout;
@@ -57,11 +58,12 @@ const WorkoutPlanCard = ({
 
         {activeTab === "today" && (
           <button
-            onClick={() => onDone?.(item.id)}
-            className="rounded-full bg-[#c2f800] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#d0ff33]"
-          >
-            ✓ MARK AS DONE
-          </button>
+  onClick={() => onDone?.(item.id)}
+  className="flex items-center gap-2 rounded-full bg-[#c2f800] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#d0ff33]"
+>
+  <Check size={16} />
+  MARK AS DONE
+</button>
         )}
 
         <button

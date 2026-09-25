@@ -19,7 +19,7 @@ const Hero = () => {
               into today&apos;s plan, and watch the week&apos;s work add up.</i> 
             </p>
             <a href="#library" className="btn  bg-[#c2f800] hover:bg-yellow-400 text-black">
-              BROWSE WORKOUTS
+              BROWSE WORKOUTS <span className="text-lg">→</span>
             </a>
           </div>
           <Image

@@ -4,12 +4,12 @@ import { Workout } from "@/types/workout";
 import React, { useContext } from "react";
 import { toast } from "react-toastify";
 import { WorkoutContext } from "@/components/context/WorkoutContext";
+import { Bookmark } from "lucide-react";
 
 const SavedActions = ({ workout }: { workout: Workout }) => {
   const { saveWorkout, setSaveWorkout } = useContext(WorkoutContext)!;
 
   const handleSave = () => {
-
     const alreadySaved = saveWorkout.some(
       (item: Workout) => item.id === workout.id,
     );
@@ -29,9 +29,10 @@ const SavedActions = ({ workout }: { workout: Workout }) => {
   return (
     <button
       onClick={handleSave}
-      className="rounded-xl border border-zinc-700 bg-zinc-900 px-5 py-4 font-bold text-white"
+      className="flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900 px-5 py-4 font-bold text-white"
     >
-      ♡ Save for later
+      <Bookmark size={16} />
+      Save for later
     </button>
   );
 };
