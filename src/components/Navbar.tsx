@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../image/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 const Navbar = () => {
   return (
     <div>
@@ -15,22 +16,22 @@ const Navbar = () => {
         <div className="navbar-center">
           <ul className="menu menu-horizontal px-1 gap-5">
             <li>
-              <a>Workout</a>
+              <Link href="/">Workout</Link>
             </li>
             <li>
-              <a>My Plan</a>
+              <Link href="/my-plan">My plan</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end gap-5">
-          <a className="flex items-center gap-2">
-            <span>Plan</span>
+          <div className="flex items-center gap-2">
+            <Link href="/my-plan">Plan</Link>
             <span className="flex h-7 w-7 items-center justify-center rounded-full border bg-yellow-300 border-yellow-300  text-black">0</span>
-          </a>
-          <a className="flex items-center gap-2">
-            <span>Saved</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Link href="/my-plan">Saved</Link>
             <span className="flex h-7 w-7 items-center justify-center rounded-full border  border-white ">0</span>
-          </a>
+          </div>
         </div>
       </div>
       <div className="h-10"></div>
