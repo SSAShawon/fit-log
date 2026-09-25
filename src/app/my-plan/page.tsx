@@ -9,8 +9,8 @@ import { toast } from "react-toastify";
 const MyPlan = () => {
   const [activeTab, setActiveTab] = useState("today");
 
-  const [todayPlan, setTodayPlan] = useState<Workout[]>(() =>
-  JSON.parse(localStorage.getItem("todayPlan") || "[]")
+  const [todayPlan, setTodayPlan] = useState<Workout[]>(([])
+  
 );
   const handleRemove=(id:number)=>{
     const updatePlan=todayPlan.filter((item)=>item.id !==id)
