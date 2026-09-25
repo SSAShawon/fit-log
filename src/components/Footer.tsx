@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="bg-black px-10 py-6 text-white border-t border-zinc-800">
         <div className="flex items-center justify-between">
           {/* Left */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 ">
             <Image src={logo} alt="Workout Logo" className="h-10 w-10" />
             <span className="text-2xl font-bold">FITLOG</span>
           </div>

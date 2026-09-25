@@ -15,12 +15,12 @@ const Hero = () => {
               TRAIN WITH INTENT. LOG EVERY SET.
             </h1>
             <p className="py-6 text-gray-400">
-              FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
-              into today's plan, and watch the week's work add up.
+             <i>FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
+              into today&apos;s plan, and watch the week&apos;s work add up.</i> 
             </p>
-            <button className="btn  bg-[#c2f800] hover:bg-yellow-400 text-black">
-              Explore Workouts
-            </button>
+            <a href="#library" className="btn  bg-[#c2f800] hover:bg-yellow-400 text-black">
+              BROWSE WORKOUTS
+            </a>
           </div>
           <Image
             alt="workOut"

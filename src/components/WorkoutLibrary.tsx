@@ -10,7 +10,7 @@ const WorkoutLibrary = async () => {
 
 
     return (
-        <div className='bg-black px-5 py-10 text-white'>
+        <div id="library"  className='bg-black px-5 py-10 text-white'>
             
             {/* text section */}
             <div className='mx-8'>

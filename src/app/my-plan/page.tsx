@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Workout } from "@/types/workout";
@@ -17,6 +17,8 @@ const MyPlan = () => {
     setActiveTab,
   } = useContext(WorkoutContext)!;
 
+  const [sortBy, setSortBy] = useState("duration");
+
   const handleRemove = (id: number) => {
     const updatedPlan = addWorkout.filter((item: Workout) => item.id !== id);
 
@@ -26,6 +28,22 @@ const MyPlan = () => {
   };
 
   const activePlan = activeTab === "today" ? addWorkout : saveWorkout;
+
+  const sortedPlan = [...activePlan].sort((a, b) => {
+    if (sortBy === "duration") {
+      return a.duration - b.duration;
+    }
+
+    if (sortBy === "calories") {
+      return a.caloriesBurned - b.caloriesBurned;
+    }
+
+    if (sortBy === "rating") {
+      return a.rating - b.rating;
+    }
+
+    return 0;
+  });
 
   const totalMinutes = activePlan.reduce(
     (total, item) => total + item.duration,
@@ -48,7 +66,7 @@ const MyPlan = () => {
         </p>
       </div>
 
-      <div className="my-5 grid grid-cols-3 border border-zinc-900 bg-zinc-900 p-5">
+      <div className="my-5 grid grid-cols-3 border border-zinc-900 bg-zinc-900 p-5 rounded-2xl">
         <div>
           <h2 className="py-2 text-xs text-gray-300">EXERCISE</h2>
 
@@ -75,7 +93,7 @@ const MyPlan = () => {
       </div>
 
       {/* Todays plan and  Saved section  */}
-      <div className="my-5">
+      <div className="my-5 flex items-center justify-between">
         <div className="flex w-fit rounded-xl border border-zinc-800 bg-zinc-900 p-1">
           <button
             onClick={() => setActiveTab("today")}
@@ -95,6 +113,43 @@ const MyPlan = () => {
             Saved
           </button>
         </div>
+
+        <div className="dropdown">
+          <div
+            tabIndex={0}
+            role="button"
+            className="flex min-w-40 cursor-pointer items-center justify-between gap-3 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 text-sm font-semibold text-white transition hover:border-[#c2f800]/50"
+          >
+            <span>
+              Sort By:{" "}
+              <span className="text-[#c2f800]">
+                {sortBy === "duration"
+                  ? "Duration"
+                  : sortBy === "calories"
+                    ? "Calories"
+                    : "Rating"}
+              </span>
+            </span>
+
+            <span className="text-gray-400">⌄</span>
+          </div>
+
+          <ul
+            tabIndex={0}
+            onClick={() => (document.activeElement as HTMLElement)?.blur()}
+            className="dropdown-content menu z-10 mt-2 w-44 rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-xl"
+          >
+            <li>
+              <button tabIndex={0} onClick={() => setSortBy("duration")}>Duration</button>
+            </li>
+            <li>
+              <button tabIndex={0} onClick={() => setSortBy("calories")}>Calories</button>
+            </li>
+            <li>
+              <button tabIndex={0} onClick={() => setSortBy("rating")}>Rating</button>
+            </li>
+          </ul>
+        </div>
       </div>
 
       {/* Content of Todays Plan*/}
@@ -110,14 +165,14 @@ const MyPlan = () => {
 
               <Link
                 href="/"
-                className="mt-6 rounded-full bg-[#c2f800] px-6 py-3 font-bold text-black"
+                className="mt-6 rounded-full bg-[#c2f800] px-5 py-3 my-8 font-bold text-black"
               >
-                GO TO WORKOUTS
+                Go to workouts
               </Link>
             </div>
           ) : (
             <div className="space-y-4">
-              {addWorkout.map((item: Workout) => (
+              {sortedPlan.map((item: Workout) => (
                 <div
                   key={item.id}
                   className="grid grid-cols-[180px_1fr_auto] items-center gap-6 rounded-2xl border border-zinc-800 bg-zinc-900 p-4"
@@ -155,7 +210,7 @@ const MyPlan = () => {
                   <div className="flex items-center gap-3">
                     <Link
                       href={`/workout/${item.id}`}
-                      className="rounded-lg border border-zinc-700 px-4 py-3 text-sm font-semibold text-white transition hover:border-gray-500"
+                      className="rounded-full border border-zinc-700 px-4 py-2 text-sm font-semibold text-white transition hover:border-gray-500"
                     >
                       VIEW DETAILS
                     </Link>
@@ -170,7 +225,7 @@ const MyPlan = () => {
 
                         toast.success(`${item.name} marked as done`);
                       }}
-                      className="rounded-lg bg-[#c2f800] px-4 py-3 text-sm font-semibold text-black transition hover:bg-[#d0ff33]"
+                      className="rounded-full bg-[#c2f800] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#d0ff33]"
                     >
                       ✓ MARK AS DONE
                     </button>
@@ -198,14 +253,14 @@ const MyPlan = () => {
 
             <Link
               href="/"
-              className="mt-6 rounded-full bg-[#c2f800] px-6 py-3 font-bold text-black"
+              className="mt-6 rounded-full bg-[#c2f800] px-5 py-3 my-8 font-bold text-black"
             >
               Go to workouts
             </Link>
           </div>
         ) : (
           <div className="space-y-4">
-            {saveWorkout.map((item: Workout) => (
+            {sortedPlan.map((item: Workout) => (
               <div
                 key={item.id}
                 className="grid grid-cols-[180px_1fr_auto] items-center gap-6 rounded-2xl border border-zinc-800 bg-zinc-900 p-4"
@@ -241,7 +296,7 @@ const MyPlan = () => {
                 <div className="flex items-center gap-3">
                   <Link
                     href={`/workout/${item.id}`}
-                    className="rounded-lg border border-zinc-700 px-4 py-3 text-sm font-semibold text-white transition hover:border-gray-500"
+                    className="rounded-full border border-zinc-700 px-4 py-2 text-sm font-semibold text-white transition hover:border-gray-500"
                   >
                     VIEW DETAILS
                   </Link>

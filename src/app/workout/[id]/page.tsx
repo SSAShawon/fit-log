@@ -36,7 +36,7 @@ const Details = async ({params}:{params:Promise<{id: string}>}) => {
           </div>
           {/* other information */}
           <div>
-            <h1 className="text-4xl pb-5">{workout.name}</h1>
+            <h1 className="text-4xl pb-5 font-bold">{workout.name}</h1>
             <p className="text-[16px] text-gray-300 pb-5">{workout.description}</p>
             <div className="flex flex-wrap gap-4 my-6">
             {workout.muscleGroups.map((item)=>(
@@ -87,7 +87,7 @@ const Details = async ({params}:{params:Promise<{id: string}>}) => {
             </div>
 
             {/* button  */}
-            <div className="mt-10 flex justify-between gap-4">
+            <div className="mt-10 flex gap-10">
               <WorkoutActions workout={workout}/>
 
               <SavedActions workout={workout}/>

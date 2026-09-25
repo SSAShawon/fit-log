@@ -49,7 +49,7 @@ const Navbar = () => {
         <div className="navbar-end gap-5">
           <div className="flex items-center gap-2">
             <Link href="/my-plan">Plan</Link>
-            <span className="flex h-7 w-7 items-center justify-center rounded-full border bg-yellow-300 border-yellow-300  text-black">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full border bg-[#c2f800] bg-[#c2f800]  text-black">
               {addWorkout.length}
             </span>
           </div>
