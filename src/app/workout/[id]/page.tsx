@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Workout } from "@/types/workout";
 import WorkoutActions from "@/components/WorkoutActions";
+import SavedActions from "@/components/SavedActions";
 
 const Details = async ({params}:{params:Promise<{id: string}>}) => {
 
@@ -89,9 +90,7 @@ const Details = async ({params}:{params:Promise<{id: string}>}) => {
             <div className="mt-10 flex justify-between gap-4">
               <WorkoutActions workout={workout}/>
 
-              <button className="rounded-xl border border-zinc-700 bg-zinc-900 px-5 py-4 font-bold text-white">
-                ♡ SAVE FOR LATER
-              </button>
+              <SavedActions workout={workout}/>
             </div>
           </div>
         </div>
