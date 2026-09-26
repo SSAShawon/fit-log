@@ -15,8 +15,8 @@ FITLOG is a modern workout library and planning app built for people who want to
 
 ## Key Features
 
-1. **Workout Library** — Browse workouts with muscle groups, equipment, duration, calories, and ratings.
-2. **Workout Details** — View complete workout information, including sets, reps, difficulty, and instructions.
+1. **Workout Library** — Browse workouts with muscle groups, equipment, duration, calories and ratings.
+2. **Workout Details** — View complete workout information, including sets, reps, difficulty and instructions.
 3. **Today's Plan** — Add workouts to a daily workout plan and manage them easily.
 4. **Save for Later** — Save workouts and access them from the Saved section.
-5. **Workout Sorting** — Sort planned workouts by duration, calories, or rating.
+5. **Workout Sorting** — Sort planned workouts by duration, calories or rating.
