@@ -2,7 +2,7 @@
 
 ## Short Description
 
-FITLOG is a modern workout library and planning app built for people who want to discover exercises, organize their daily workouts, and keep track of their training plan in one place.
+FITLOG is a modern workout library and planning app built for people who want to discover exercises, organize their daily workouts and keep track of their training plan in one place.
 
 ## Technologies Used
 
