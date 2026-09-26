@@ -6,7 +6,7 @@ import { Clock3, Flame, Star } from "lucide-react";
 
 const WorkoutCard = ({ workout }: { workout: Workout }) => {
   return (
-    <Link href={`workout/${workout.id}`}>
+    <Link href={`/workout/${workout.id}`}>
       <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg">
         {/* Image */}
         <div className=" relative h-90 w-full bg-zinc-800">

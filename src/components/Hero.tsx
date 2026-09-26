@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import logo from "../image/banner.png";
+
+import { ArrowRight } from "lucide-react";
+
+
 const Hero = () => {
   return (
     <div className="bg-black px-4 py-10 text-white md:px-8 md:py-14 lg:px-10 lg:py-20">
@@ -22,7 +26,7 @@ const Hero = () => {
               href="#library"
               className="btn  bg-[#c2f800] hover:bg-yellow-400 text-black"
             >
-              BROWSE WORKOUTS <span className="text-lg">→</span>
+              BROWSE WORKOUTS <ArrowRight size={18} />
             </a>
           </div>
           <Image

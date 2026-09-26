@@ -54,7 +54,7 @@ const MyPlan = () => {
         <h1 className="pt-8 pb-5 text-4xl font-bold">MY PLAN</h1>
 
         <p className="text-sm text-gray-300">
-          Cap of five lifts for today. Finish them, then load more.
+         <i> Cap of five lifts for today. Finish them, then load more.</i>
         </p>
       </div>
 

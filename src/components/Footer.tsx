@@ -23,7 +23,7 @@ const Footer = () => {
 
        
         <h3 className="text-center text-xs text-gray-400 md:text-sm">
-          © 2026 FitLog — Workout Library. Train hard, log honest.
+          <i>© 2026 FitLog — Workout Library. Train hard, log honest.</i>
         </h3>
       </div>
     </div>
