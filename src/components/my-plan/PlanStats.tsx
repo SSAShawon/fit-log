@@ -20,7 +20,7 @@ const PlanStats = ({ activePlan }: PlanStatsProps) => {
       <div>
         <h2 className="py-2 text-[10px] text-gray-300 md:text-xs">EXERCISE</h2>
 
-        <h4 className="py-2 text-2xl font-bold text-[#c2f800] md:text-4xl">
+        <h4 className="py-2 text-4xl font-bold text-[#c2f800] md:text-4xl">
           {activePlan.length}
         </h4>
       </div>
