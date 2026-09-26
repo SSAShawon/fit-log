@@ -1,5 +1,7 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
+
 interface PlanTabsProps {
   activeTab: "today" | "saved";
   setActiveTab: React.Dispatch<React.SetStateAction<"today" | "saved">>;
@@ -14,12 +16,11 @@ const PlanTabs = ({
   setSortBy,
 }: PlanTabsProps) => {
   return (
-    <div className="my-5 flex items-center justify-between">
-      {/* Today / Saved */}
+    <div className="my-5 flex items-center justify-between gap-2">
       <div className="flex w-fit rounded-xl border border-zinc-800 bg-zinc-900 p-1">
         <button
           onClick={() => setActiveTab("today")}
-          className={`rounded-xl px-5 py-2 text-sm font-semibold ${
+          className={`rounded-xl px-3 py-2 text-xs font-semibold md:px-5 md:text-sm ${
             activeTab === "today" ? "bg-gray-300 text-black" : "text-gray-400"
           }`}
         >
@@ -36,12 +37,12 @@ const PlanTabs = ({
         </button>
       </div>
 
-      {/* Sort Dropdown */}
+      {/*  Dropdown */}
       <div className="dropdown">
         <div
           tabIndex={0}
           role="button"
-          className="flex min-w-40 cursor-pointer items-center justify-between gap-3 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 text-sm font-semibold text-white transition hover:border-[#c2f800]/50"
+          className="flex min-w-32 cursor-pointer items-center justify-between gap-2 rounded-xl border border-zinc-800 bg-zinc-900 px-3 py-2 text-xs font-semibold text-white transition hover:border-[#c2f800]/50 md:min-w-40 md:gap-3 md:px-4 md:py-3 md:text-sm"
         >
           <span>
             Sort By:{" "}
@@ -54,7 +55,7 @@ const PlanTabs = ({
             </span>
           </span>
 
-          <span className="text-gray-400">⌄</span>
+          <ChevronDown size={16} className="text-gray-400" />
         </div>
 
         <ul

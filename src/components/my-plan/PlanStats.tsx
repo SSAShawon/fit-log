@@ -16,11 +16,11 @@ const PlanStats = ({ activePlan }: PlanStatsProps) => {
   );
 
   return (
-    <div className="my-5 grid grid-cols-3 rounded-2xl border border-zinc-900 bg-zinc-900 p-5">
+    <div className="my-5 grid grid-cols-3 rounded-2xl border border-zinc-900 bg-zinc-900 p-3 md:p-5">
       <div>
-        <h2 className="py-2 text-xs text-gray-300">EXERCISE</h2>
+        <h2 className="py-2 text-[10px] text-gray-300 md:text-xs">EXERCISE</h2>
 
-        <h4 className="py-2 text-4xl font-bold text-[#c2f800]">
+        <h4 className="py-2 text-2xl font-bold text-[#c2f800] md:text-4xl">
           {activePlan.length}
         </h4>
       </div>

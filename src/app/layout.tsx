@@ -32,7 +32,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <WorkoutProvider>
           <Navbar />
 
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 px-5 md:px-10 lg:px-40">
+            {children}
+            </main>
 
           <ToastContainer />
           <Footer />

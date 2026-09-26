@@ -49,7 +49,7 @@ const MyPlan = () => {
 
   return (
     <div className="bg-black px-10 py-10 text-white">
-      {/* Header */}
+      
       <div>
         <h1 className="pt-8 pb-5 text-4xl font-bold">MY PLAN</h1>
 
@@ -67,7 +67,7 @@ const MyPlan = () => {
         setSortBy={setSortBy}
       />
 
-      {/* Content of Todays Plan*/}
+      
       <div>
         {activeTab === "today" ? (
           addWorkout.length === 0 ? (
@@ -93,7 +93,9 @@ const MyPlan = () => {
               ))}
             </div>
           )
-        ) : // Content  Saved
+        ) : 
+        
+        
 
         saveWorkout.length === 0 ? (
           <EmptyPlan />

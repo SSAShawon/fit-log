@@ -7,20 +7,17 @@ import SavedActions from "@/components/SavedActions";
 const Details = async ({params}:{params:Promise<{id: string}>}) => {
 
     const {id}=await params;
-    console.log(id);
-
     const res=await fetch("https://api.abcz.workers.dev/api/fitlog")
-
     const workouts:Workout[] =await res.json()
 
-    console.log(workouts)
+    
 
     const workout =workouts.find((item:Workout)=> item.id===Number(id));
     if(!workout){
         throw new Error("Not Found")
     }
 
-    console.log(workout)
+    
 
   return (
     <div className="bg-black ">
@@ -76,7 +73,7 @@ const Details = async ({params}:{params:Promise<{id: string}>}) => {
               </div>
             </div>
 
-            {/* instraction part */}
+            {/* instructions part */}
             <div className="space-y-3">
               <h1 className="font-bold text-2xl">INSTRUCTIONS</h1>
               {workout.instructions.map((item,ind)=>(

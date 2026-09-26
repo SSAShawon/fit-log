@@ -4,21 +4,29 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-   
-      <div className="bg-black px-10 py-6 text-white border-t border-zinc-800">
-        <div className="flex items-center justify-between">
-          {/* Left */}
-          <div className="flex items-center gap-2 ">
-            <Image src={logo} alt="Workout Logo" className="h-10 w-10" />
-            <span className="text-2xl font-bold">FITLOG</span>
-          </div>
+    <div className="border-t border-zinc-800 bg-black px-4 py-6 text-white md:px-8 lg:px-10">
+      <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+        
 
-          {/* Right */}
-          <h3 className="text-sm text-gray-400">
-            © 2026 FitLog — Workout Library. Train hard, log honest.
-          </h3>
+
+        <div className="flex items-center gap-2">
+          <Image
+            src={logo}
+            alt="Workout Logo"
+            className="h-9 w-9 md:h-10 md:w-10"
+          />
+
+          <span className="text-xl font-bold md:text-2xl">FITLOG</span>
         </div>
+
+
+
+       
+        <h3 className="text-center text-xs text-gray-400 md:text-sm">
+          © 2026 FitLog — Workout Library. Train hard, log honest.
+        </h3>
       </div>
+    </div>
   );
 };
 

@@ -10,16 +10,16 @@ const WorkoutLibrary = async () => {
 
 
     return (
-        <div id="library"  className='bg-black px-5 py-10 text-white'>
+        <div id="library" className="bg-black px-4 py-10 text-white md:px-6 lg:px-8">
             
-            {/* text section */}
-            <div className='mx-8'>
+            
+            <div className="mx-2 md:mx-4 lg:mx-8">
                 <h2 className='text-3xl font-bold'>THE LIBRARY</h2>
                 <p className='mt-2 text-gray-400 pb-7'>Twelve lifts covering every major muscle group.</p>
             </div>
-            {/* card section */}
+            
 
-            <div className='grid grid-cols-1 mx-8 gap-20 md:grid-cols-2 lg:grid-cols-3'>
+            <div className="mx-2 grid grid-cols-1 gap-6 md:mx-4 md:grid-cols-2 md:gap-8 lg:mx-8 lg:grid-cols-3 lg:gap-10">
                 {workout.map((item)=>(
                     <WorkoutCard key={item.id} workout={item}/>
                 ))}
